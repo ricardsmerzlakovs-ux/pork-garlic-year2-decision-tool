@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pork & Garlic Ice Cream — Year 2 Decision Lab</title>
+  <meta name="description" content="Interactive Year 2 winter decision support model based on official Year 1 results." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">PORK & GARLIC ICE CREAM CO.</p>
+      <h1>Year 2 Winter Decision Lab</h1>
+      <p class="lede">Use the official Year 1 outcome as a starting point, test two different winter plans, and compare cash, profit, capacity and risk before submitting a decision.</p>
+    </div>
+    <div class="hero-badge">Original decision-support model</div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="kicker">Baseline</p><h2>What Year 1 leaves us with</h2></div>
+        <p class="muted">These figures are taken from the supplied Year 1 workbook and are not editable here.</p>
+      </div>
+      <div class="metrics four">
+        <article class="metric"><span>Year 1 revenue</span><strong>Sh 300,000</strong><small>All revenue came in Autumn</small></article>
+        <article class="metric danger"><span>Year 1 net result</span><strong>Sh −167,978</strong><small>Annual loss</small></article>
+        <article class="metric danger"><span>Closing cash</span><strong>Sh −144,853</strong><small>Opening Year 2 pressure point</small></article>
+        <article class="metric"><span>Installed capacity</span><strong>192,000</strong><small>Machines 1 + 2</small></article>
+      </div>
+      <div class="baseline-grid">
+        <div><h3>Assets already owned</h3><p>Machine 1: 72,000 units capacity<br>Machine 2: 120,000 units capacity</p></div>
+        <div><h3>Core operating rules</h3><p>Milk output: 20,000 units/ton<br>Milk cost: Sh 20,000/ton<br>Tax rate: 10%</p></div>
+        <div><h3>What matters most now</h3><p>Year 1 finished with negative cash even though operating checks passed. Year 2 must balance survival, demand capture and investment discipline.</p></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div><p class="kicker">Scenario builder</p><h2>Create two different Year 2 Winter plans</h2></div>
+        <p class="muted">Change the assumptions below. The model recalculates immediately.</p>
+      </div>
+      <div class="scenario-grid">
+        <section class="scenario" data-scenario="a">
+          <div class="scenario-title"><div><span class="option-tag">OPTION A</span><h3>Recovery plan</h3></div><button class="reset" data-reset="a">Reset</button></div>
+          <div class="fields" id="fields-a"></div>
+        </section>
+        <section class="scenario" data-scenario="b">
+          <div class="scenario-title"><div><span class="option-tag alt">OPTION B</span><h3>Expansion plan</h3></div><button class="reset" data-reset="b">Reset</button></div>
+          <div class="fields" id="fields-b"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="kicker">Decision support</p><h2>Compare the choices</h2></div><p class="muted">The tool highlights trade-offs instead of making the final decision for you.</p></div>
+      <div class="comparison-wrap">
+        <table class="comparison">
+          <thead><tr><th>Measure</th><th>Option A</th><th>Option B</th></tr></thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+      <div class="insight-grid">
+        <article class="insight"><h3>Cash pressure</h3><p id="cash-insight"></p></article>
+        <article class="insight"><h3>Capacity & waste</h3><p id="capacity-insight"></p></article>
+        <article class="insight"><h3>Key uncertainty</h3><p>Trainer sales allocation remains an external assumption. Forecast demand and requested sales are not guaranteed revenue, so the model separates requested sales from allocated sales.</p></article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading"><div><p class="kicker">Checks</p><h2>Rule and risk monitor</h2></div><p class="muted">A valid operating plan can still be financially weak.</p></div>
+      <div class="checks-grid" id="checks-grid"></div>
+    </section>
+
+    <section class="panel recommendation">
+      <div>
+        <p class="kicker">Student conclusion</p>
+        <h2>Write your recommendation</h2>
+        <p class="muted">Use evidence from the comparison, then explain which assumption could change your choice.</p>
+      </div>
+      <textarea id="recommendation" placeholder="Example structure: I would choose Option ... because... The strongest evidence is... The main risk is... If trainer allocation changes, I would..." rows="6"></textarea>
+      <div class="export-row"><button id="copy-summary">Copy comparison summary</button><span id="copy-status"></span></div>
+    </section>
+  </main>
+
+  <footer>
+    Built as an original Year 2 decision-support model using the supplied Year 1 workbook as the data base. Accounting assumptions are stated explicitly and can be updated when new game rules are provided.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
